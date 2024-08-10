@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Spam/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Spam/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'Spam/css/radio.css' %}">
+    <title>AI Tools</title>
+</head>
+<body>
+    <section>
+        <!--header start-->
+        <header>
+            <nav>
+                <div><a href="#" class="brand">spdetect</a></div>
+                <ul>
+                    <li><a href="#" class="active">WebApplication</a></li>
+                    <li><a href="#" class="active">Webapi</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--header end-->
+        <!--main content start-->
+        <div class="fluid-container content">
+            <div class="row m-auto">
+                <!--text section start-->
+                <div class="col-md-6 p-5 m-auto type-content">
+                    <h1>Welcome to spdetect</h1>
+                    <h5>[spam message detect]</h5>
+                    <p>This is an online website where you can check any text for spam.</p>
+                    <p>Enter your text and select the algorithm, press the check button and wait until your data is processed.</p>
+                    <p>See the results after processing.</p>
+                </div>
+                <!--text section end-->
+                <!--form section start-->
+                <div class="col-md-6 p-10 m-auto form-content">
+                    <form class="main-form" action="/check/" method="post">
+                        {% csrf_token %}
+                        <textarea name="rawdata" id="rawdata" placeholder="enter your text here..."></textarea>
+                        <div class="algo-choice">
+                            <label class="radiocontainer">algo-1
+                                <input type="radio" name="algo" value="algo-1">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radiocontainer">algo-2
+                                <input type="radio" name="algo" value="algo-2">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="radiocontainer">algo-3
+                                <input type="radio" name="algo" value="algo-3">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="check-holder">
+                            <button class="check-btn" type="submit">check</button>
+                        </div>
+                    </form>
+                </div>   
+                <!--form section end-->
+            </div>
+            <div class="footer">
+                <p>copyright &COPY;2024 developed by <b>tushar</b></p>
+            </div>
+            <!--footer end-->
+        </div>    
+        <!--main content end-->
+    </section>
+    <script src="{% static 'Spam/Js/JQuery.js' %}"></script>
+    <script src="{% static 'Spam/Js/Bootstrap.min.js' %}"></script>
+    <script src="{% static 'Spam/Js/Main.js' %}"></script>
+</body>
+</html>

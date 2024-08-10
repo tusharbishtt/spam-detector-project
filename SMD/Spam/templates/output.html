@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'spam/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'spam/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'spam/css/radio.css' %}">
+    <title>AI Tools</title>
+</head>
+<body>
+    <!--main content start-->
+    <section class="answersection">
+        <p class="answer">
+            {% if answer == "ham" %}
+            Not Spam
+            {% else %}
+            Spam
+            {% endif %}
+        </p>
+        <a href="/" class="backbtn">Back</a>
+        
+    </section>
+    <!--main content end-->
+
+    <!-- Ensure the correct file path for static files -->
+    <script src="{% static 'spam/js/JQuery.js' %}"></script>
+    <script src="{% static 'spam/js/Bootstrap.min.js' %}"></script>
+    <script src="{% static 'spam/js/Main.js' %}"></script>
+</body>
+</html>
+
